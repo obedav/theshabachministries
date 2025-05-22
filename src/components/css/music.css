@@ -1,0 +1,723 @@
+/* Music Page Styling */
+.music-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-top: 2rem;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: rgba(95, 3, 3, 0.9);
+  font-family: var(--font-secondary);
+}
+
+.page-header p {
+  font-size: 1.2rem;
+  color: rgba(14, 5, 0, 0.7);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Music Categories */
+.music-categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.category-button {
+  padding: 0.7rem 1.5rem;
+  background: transparent;
+  border: 2px solid rgba(95, 3, 3, 0.6);
+  color: rgba(95, 3, 3, 0.8);
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.7s ease;
+}
+
+.category-button:hover::before {
+  left: 100%;
+}
+
+.category-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(95, 3, 3, 0.15);
+}
+
+.category-button.active {
+  background: rgba(95, 3, 3, 0.7);
+  color: #fff;
+  border-color: rgba(95, 3, 3, 0.7);
+}
+
+/* Music Track List */
+.music-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.music-track {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(14, 5, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: row;
+}
+
+.music-track:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(14, 5, 0, 0.1);
+}
+
+.track-thumbnail {
+  width: 180px;
+  min-width: 180px;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+.track-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.music-track:hover .track-thumbnail img {
+  transform: scale(1.1);
+}
+
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(95, 3, 3, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.play-overlay button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.play-overlay button i {
+  font-size: 1.5rem;
+  color: rgba(95, 3, 3, 0.9);
+}
+
+.music-track:hover .play-overlay {
+  opacity: 1;
+}
+
+.track-info {
+  flex: 1;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.track-title {
+  font-family: var(--font-secondary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgba(95, 3, 3, 0.9);
+  margin-bottom: 0.5rem;
+}
+
+.track-artist {
+  font-size: 1rem;
+  color: rgba(14, 5, 0, 0.7);
+  margin-bottom: 1rem;
+}
+
+.track-description {
+  color: rgba(14, 5, 0, 0.75);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.track-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.preview-button {
+  padding: 0.6rem 1.2rem;
+  background: rgba(95, 3, 3, 0.7);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.preview-button:hover {
+  background: rgba(95, 3, 3, 0.9);
+}
+
+.youtube-button {
+  padding: 0.6rem 1.2rem;
+  background: transparent;
+  border: 1px solid rgba(95, 3, 3, 0.7);
+  color: rgba(95, 3, 3, 0.8);
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.youtube-button:hover {
+  background: rgba(95, 3, 3, 0.1);
+}
+
+.duration-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.7rem;
+  background-color: rgba(95, 3, 3, 0.1);
+  color: rgba(95, 3, 3, 0.8);
+  border-radius: 30px;
+  font-size: 0.8rem;
+  margin-left: auto;
+}
+
+.duration-badge i {
+  font-size: 0.9rem;
+}
+
+/* Preview Player */
+.preview-player {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(95, 3, 3, 0.05);
+  border-radius: 5px;
+  margin-top: 1.5rem;
+}
+
+.preview-player.hidden {
+  display: none;
+}
+
+.preview-player-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.preview-player-controls button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: rgba(95, 3, 3, 0.8);
+  cursor: pointer;
+}
+
+.preview-progress {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+}
+
+.preview-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(95, 3, 3, 0.8);
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  height: 6px;
+  background-color: rgba(95, 3, 3, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: rgba(95, 3, 3, 0.7);
+  width: 30%; /* This would be dynamically updated via JS */
+}
+
+.preview-time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: rgba(14, 5, 0, 0.6);
+  margin-top: 0.3rem;
+}
+
+.preview-message {
+  margin-left: auto;
+  font-size: 0.9rem;
+  color: rgba(95, 3, 3, 0.7);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Featured Artists Section */
+.featured-artists {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(14, 5, 0, 0.1);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.section-header h2 {
+  font-family: var(--font-secondary);
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(95, 3, 3, 0.9);
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: rgba(14, 5, 0, 0.7);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.artists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.artist-card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(14, 5, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.artist-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(14, 5, 0, 0.1);
+}
+
+.artist-image {
+  height: 250px;
+  overflow: hidden;
+}
+
+.artist-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.artist-card:hover .artist-image img {
+  transform: scale(1.1);
+}
+
+.artist-info {
+  padding: 1.5rem;
+}
+
+.artist-name {
+  font-family: var(--font-secondary);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: rgba(95, 3, 3, 0.9);
+  margin-bottom: 0.5rem;
+}
+
+.artist-role {
+  font-size: 0.9rem;
+  color: rgba(14, 5, 0, 0.7);
+  margin-bottom: 1rem;
+}
+
+.artist-social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.artist-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(95, 3, 3, 0.1);
+  color: rgba(95, 3, 3, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.artist-social a:hover {
+  background-color: rgba(95, 3, 3, 0.8);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .music-track {
+    flex-direction: column;
+  }
+  
+  .track-thumbnail {
+    width: 100%;
+    min-width: 100%;
+    height: 220px;
+  }
+  
+  .play-overlay {
+    opacity: 0.8;
+  }
+  
+  .page-header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .track-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  
+  .duration-badge {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+  
+  .preview-player {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .preview-message {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+  
+  .page-header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .track-title {
+    font-size: 1.3rem;
+  }
+  
+  .track-thumbnail {
+    height: 180px;
+  }
+  
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .page-header p {
+    font-size: 1rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+}
+
+
+
+
+/* Remove the Featured Artists section CSS */
+/* And replace with this Join Our Music Ministry section CSS */
+
+/* Join Our Music Ministry Section */
+.join-music-ministry {
+  margin-top: 4rem;
+  padding: 3rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(95, 3, 3, 0.03), rgba(95, 3, 3, 0.07));
+  position: relative;
+  overflow: hidden;
+}
+
+.join-music-ministry::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/patterns/subtle-cross-pattern.png');
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.ministry-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.ministry-text {
+  padding-right: 2rem;
+}
+
+.ministry-text h2 {
+  font-family: var(--font-secondary);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: rgba(95, 3, 3, 0.9);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.ministry-text h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 2px;
+  background-color: rgba(95, 3, 3, 0.4);
+}
+
+.ministry-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(14, 5, 0, 0.75);
+  margin-bottom: 1.5rem;
+}
+
+.ministry-quote {
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-left: 3px solid rgba(95, 3, 3, 0.5);
+  font-style: italic;
+  color: rgba(14, 5, 0, 0.8);
+  margin-bottom: 2rem;
+}
+
+.ministry-quote p {
+  margin-bottom: 0.5rem;
+}
+
+.ministry-quote span {
+  font-size: 0.9rem;
+  color: rgba(14, 5, 0, 0.6);
+  font-style: normal;
+}
+
+.join-button {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  background: rgba(95, 3, 3, 0.8);
+  color: #ffffffd3;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.join-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.7s ease;
+}
+
+.join-button:hover::before {
+  left: 100%;
+}
+
+.join-button:hover {
+  background: rgba(95, 3, 3, 1);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(95, 3, 3, 0.2);
+}
+
+.ministry-image {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(14, 5, 0, 0.1);
+  height: 400px;
+}
+
+.ministry-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.ministry-image:hover img {
+  transform: scale(1.05);
+}
+
+.ministry-opportunities {
+  margin-top: 2rem;
+}
+
+.opportunity-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.opportunity-item {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(14, 5, 0, 0.06);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.opportunity-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(14, 5, 0, 0.1);
+}
+
+.opportunity-icon {
+  font-size: 2rem;
+  color: rgba(95, 3, 3, 0.7);
+  margin-bottom: 1rem;
+}
+
+.opportunity-item h4 {
+  font-family: var(--font-secondary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgba(95, 3, 3, 0.9);
+  margin-bottom: 0.8rem;
+}
+
+.opportunity-item p {
+  font-size: 0.9rem;
+  color: rgba(14, 5, 0, 0.75);
+  line-height: 1.5;
+}
+
+/* Responsive styles for the new section */
+@media (max-width: 992px) {
+  .ministry-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .ministry-text {
+    padding-right: 0;
+  }
+  
+  .ministry-image {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .join-music-ministry {
+    padding: 2rem;
+  }
+  
+  .ministry-text h2 {
+    font-size: 1.8rem;
+  }
+  
+  .opportunity-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .join-music-ministry {
+    padding: 1.5rem;
+  }
+  
+  .opportunity-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .ministry-image {
+    height: 280px;
+  }
+}
