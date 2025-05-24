@@ -1,0 +1,65 @@
+/* GospelGatherings.css */
+
+.future-gatherings-section {
+  position: relative;
+  min-height: 100vh;
+  background-color: #f9f9f9; /* Light gray background color */
+  
+  /* Multiple backgrounds: main image + subtle pattern */
+  background-image: 
+    url('/assets/images/worship-background1.JPG'),
+    linear-gradient(45deg, rgba(249, 249, 249, 0.1) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(249, 249, 249, 0.1) 25%, transparent 25%);
+  
+  background-size: 
+    contain,    /* Show entire main image without cropping */
+    20px 20px,  /* Pattern size */
+    20px 20px;  /* Pattern size */
+  
+  background-position: 
+    center,     /* Main image position */
+    0 0,        /* Pattern position */
+    10px 10px;  /* Pattern offset */
+  
+  background-repeat: 
+    no-repeat,  /* Don't repeat main image */
+    repeat,     /* Repeat pattern */
+    repeat;     /* Repeat pattern */
+  
+  background-attachment: fixed;
+}
+
+/* Add overlay for better text readability */
+.future-gatherings-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
+}
+
+/* Ensure content appears above overlay */
+.future-gatherings-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Alternative: Gradient overlay for softer effect */
+.future-gatherings-section.gradient-overlay::before {
+  background: linear-gradient(
+    135deg,
+    rgba(74, 20, 140, 0.8) 0%,
+    rgba(74, 20, 140, 0.6) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+/* Mobile optimization - disable fixed attachment on mobile */
+@media (max-width: 768px) {
+  .future-gatherings-section {
+    background-attachment: scroll;
+  }
+}

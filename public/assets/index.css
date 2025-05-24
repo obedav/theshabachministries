@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
@@ -153,199 +154,18 @@
   }
 }
 
+
+
 @media (max-width: 768px) {
   .event-card-large {
     grid-template-columns: 1fr;
   }
 }
 
-/* NAVBAR AND HEADER STYLES */
 
-/* Navbar initial state (transparent) */
-.default-header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 9;
-  transition: all 0.4s ease;
-  background-color: transparent;
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), transparent);
-}
-
-/* Navbar scrolled state */
-.default-header.scrolled,
-.non-home-header {
-  background-color: rgba(95, 3, 3, 0.95);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.header-wrap {
-  padding: 20px 0;
-}
-
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-/* LOGO STYLING - FIXED */
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo a {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  text-decoration: none;
-}
-
-.logo img {
-  height: 2.5rem;
-  width: auto;
-  border-radius: 4px;
-  object-fit: contain;
-}
-
-.logo .shabach {
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: #ffffffd3;
-  margin: 0;
-  text-transform: uppercase;
-  font-family: var(--font-secondary);
-  transition: color 0.3s ease;
-}
-
-/* Scrolled state logo */
-.default-header.scrolled .logo .shabach,
-.non-home-header .logo .shabach {
-  color: #ffffff;
-}
-
-/* NAVIGATION STYLES */
-.main-menubar {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.desktop-nav {
-  display: flex;
-  align-items: center;
-}
-
-.desktop-nav a {
-  color: #ffffffd3;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.desktop-nav a:hover {
-  color: #ffffff;
-}
-
-.menu-controls {
-  display: flex;
-  align-items: center;
-}
-
-.theme-toggle, .menu-bar {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #ffffffd3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
-  margin-left: 10px;
-}
-
-/* Mobile menu toggle button */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: #ffffffd3;
-  padding: 8px;
-}
-
-/* Mobile menu styling */
-.mobile-menu {
-  display: none;
-  position: fixed;
-  top: 70px;
-  left: 0;
-  right: 0;
-  background-color: rgba(95, 3, 3, 0.95);
-  z-index: 1000;
-  padding: 20px 0;
-  flex-direction: column;
-  align-items: center;
-}
-
-.mobile-menu.active {
-  display: flex;
-}
-
-.mobile-menu a {
-  color: #ffffffd3;
-  text-decoration: none;
-  padding: 10px 0;
-  margin: 0;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.mobile-menu a:hover {
-  color: #ffffff;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .desktop-nav {
-    display: none;
-  }
-  
-  .menu-toggle {
-    display: block;
-  }
-  
-  .logo .shabach {
-    font-size: 1rem;
-  }
-  
-  .logo img {
-    height: 2rem;
-  }
-  
-  .logo a {
-    gap: 0.75rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .logo .shabach {
-    font-size: 0.9rem;
-    letter-spacing: 0.02em;
-  }
-  
-  .logo img {
-    height: 1.8rem;
-  }
-}
 
 /*Hero Section */
+
 
 .banner-area {
   background: url('/assets/images/sanmi-1.jpg') no-repeat center center;
@@ -359,6 +179,7 @@
   justify-content: center;
 }
 
+
 .banner-background {
   position: absolute;
   top: 0;
@@ -368,6 +189,7 @@
   object-fit: contain; 
   z-index: 0;
 }
+
 
 .banner-overlay {
   position: absolute;
@@ -439,6 +261,8 @@
   text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
 }
 
+
+
 .banner-content p {
   font-size: 18px;
   letter-spacing: 8px;
@@ -502,6 +326,284 @@
   }
 }
 
+
+
+/* Navbar styling */
+.default-header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  transition: all 0.3s ease;
+}
+
+.sticky {
+  position: fixed;
+  background-image: linear-gradient(0deg, rgb(129, 32, 32,) 0%, rgb(14, 5, 0,) 100%);
+  box-shadow: 0 10px 15px rgba(114, 76, 76,);
+}
+
+.header-wrap {
+  padding: 20px 0;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  color: #ffffffd3; 
+ 
+}
+
+.main-menubar {
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  transition: all 0.3s ease;
+}
+
+nav.hide {
+  display: none;
+}
+
+nav.show {
+  display: block;
+}
+
+nav a {
+  color: #ffffffd3; 
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: rgba(24, 5, 2, 0.76); 
+}
+
+.menu-controls {
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle, .menu-bar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ffffffd3; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffffd3; 
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  nav a {
+    display: block;
+    padding: 10px 0;
+    margin: 0;
+  }
+  
+  nav.hide {
+    display: none;
+  }
+  
+  nav.show {
+    display: block;
+  }
+}
+
+/* Desktop navigation */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+}
+
+.desktop-nav a {
+  color: #ffffffd3;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Mobile menu toggle button */
+.menu-toggle {
+  display: none; 
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ffffffd3;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background-color: rgba(95, 3, 3, 0.95);
+  z-index: 1000;
+  padding: 20px 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobile-menu a {
+  color: #ffffffd3;
+  text-decoration: none;
+  padding: 12px 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none; 
+  }
+  
+  .menu-toggle {
+    display: block; 
+  }
+  
+  .mobile-menu {
+    display: flex; 
+  }
+}
+
+/* Navbar initial state (transparent) */
+.default-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  transition: all 0.4s ease;
+  background-color: transparent;
+  
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), transparent);
+}
+
+/* Navbar scrolled state */
+.default-header.scrolled {
+  background-color: rgba(95, 3, 3, 0.95); 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Make sure links are visible in both states */
+.default-header .desktop-nav a {
+  color: #ffffffd3;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.default-header .desktop-nav a:hover {
+  color: #ffffff;
+}
+
+
+.default-header .logo h1 {
+  color: #ffffffd3;
+  transition: all 0.3s ease;
+}
+
+
+.default-header.scrolled .logo h1 {
+  color: #ffffff;
+}
+
+
+/* Logo styling */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo img {
+  height: 3rem; 
+  width: auto;
+  border-radius: 4px; 
+  object-fit: contain;
+}
+
+.logo .shabach {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: white;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* For responsive design */
+@media (max-width: 768px) {
+  .logo img {
+    height: 2.5rem;
+  }
+  
+  .logo .shabach {
+    font-size: 1.25rem;
+    
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .logo .shabach {
+    font-size: 1rem;
+  }
+}
+
+.default-header.scrolled,
+.non-home-header {
+  background-color: rgba(95, 3, 3, 0.95); /* Dark hero color with opacity */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.default-header .desktop-nav a,
+.non-home-header .desktop-nav a {
+  color: #ffffffd3;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.default-header .desktop-nav a:hover,
+.non-home-header .desktop-nav a:hover {
+  color: #ffffff;
+}
+
+
 /* Featured Music Section - Gospel-themed styling */
 .featured-music-section {
   padding: 5rem 0;
@@ -509,6 +611,8 @@
   position: relative;
   overflow: hidden;
 }
+
+
 
 .section-heading {
   text-align: center;
@@ -781,12 +885,15 @@
   }
 }
 
+
+
 /* Future Gospel Gatherings Section */
 .future-gatherings-section {
   padding: 4rem 0;
   background-color: #f8f5f2;
   position: relative;
 }
+
 
 /* Vision Header */
 .vision-header {
@@ -1238,9 +1345,13 @@
   }
 }
 
+
+
+/* Footer styling */
 /* Footer styles for Shabach Ministries */
 .footer {
-  background: linear-gradient(to bottom, rgba(95, 3, 3, 0.95), rgba(14, 5, 0, 0.95));
+  background: linear-gradient(to bottom, rgba(95, 3, 3, 0.95), rgba(14, 5, 0, 0.95)), 
+              url('/assets/images/backgrounds/worship-bg.jpg') no-repeat center center;
   background-size: cover;
   color: #ffffffd3;
   padding: 4rem 0 1rem;
@@ -1256,6 +1367,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  background-image: url('/assets/patterns/cross-pattern.png');
   opacity: 0.04;
   z-index: 1;
 }
@@ -1324,7 +1436,7 @@
   bottom: 0;
   width: 40px;
   height: 2px;
-  background-color: rgba(226, 100, 54, 0.7);
+  background-color: rgba(226, 100, 54, 0.7); /* Using secondary color from your CSS */
 }
 
 .footer-links-column ul {
@@ -1354,7 +1466,7 @@
 .footer-links-column a::before {
   content: '•';
   margin-right: 0.5rem;
-  color: rgba(226, 100, 54, 0.7);
+  color: rgba(226, 100, 54, 0.7); /* Using secondary color from your CSS */
   opacity: 0;
   transform: scale(0);
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -1581,3 +1693,11 @@
     margin-right: auto;
   }
 }
+
+
+
+
+
+
+
+

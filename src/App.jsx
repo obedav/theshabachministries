@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/pages/Navbar';
 import Footer from './components/pages/Footer';
 import Home from './components/pages/Home';
@@ -33,6 +33,7 @@ function App() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </main>
         <Footer />

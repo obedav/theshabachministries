@@ -1,49 +1,53 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Sun, Moon, Menu, X } from 'lucide-react';
 import '../../index.css'; 
 
-function Navbar({  }) {
-
-  const [] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+function Navbar({ theme, toggleTheme }) {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   
-
   useEffect(() => {
     const handleScroll = () => {
-      
-      const heroHeight = 500;
-      
-      if (window.scrollY > heroHeight || !isHomePage) {
-        setIsScrolled(true);
+      if (window.scrollY > 50 || !isHomePage) {
+        setScrolled(true);
       } else {
-        setIsScrolled(false);
+        setScrolled(false);
       }
     };
     
     window.addEventListener('scroll', handleScroll);
     handleScroll(); 
     
-    
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [isHomePage]);
+  
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+  
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
 
   return (
-    <header className={`default-header sticky ${isScrolled || !isHomePage ? 'scrolled' : ''}`}>
+    <header className={`default-header ${scrolled || !isHomePage ? 'scrolled non-home-header' : ''}`}>
       <div className="container">
         <div className="header-wrap">
-          <div className="header-top d-flex justify-content-between align-items-center">
+          <div className="header-top">
             
-            <div className="logo flex items-center">
-              <img src="/img-logo.jpg" alt="Shabach Ministries Logo" className="h-10 mr-3" />
-              <h1 className="text-white font-bold shabach">SHABACH MINISTRIES</h1>
+            <div className="logo">
+              <Link to="/">
+                <img src="/assets/images/logo.jpg" alt="Shabach Ministries Logo" />
+                <h1 className="shabach">SHABACH MINISTRIES</h1>
+              </Link>
             </div>
-            
-           
-            <div className="main-menubar d-flex align-items-center">
+              
+            <div className="main-menubar">
               <nav className="desktop-nav">
                 <Link to="/">Home</Link>
                 <Link to="/music">Music</Link>
@@ -51,9 +55,25 @@ function Navbar({  }) {
                 <Link to="/about">About</Link>
                 <Link to="/contact">Contact</Link>
               </nav>
+              
+              <div className="menu-controls">
+
+                
+                <button className="menu-toggle" onClick={toggleMobileMenu}>
+                  {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                </button>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+      
+      <div className={`mobile-menu ${mobileMenuOpen ? 'active' : ''}`}>
+        <Link to="/" onClick={closeMobileMenu}>Home</Link>
+        <Link to="/about" onClick={closeMobileMenu}>About</Link>
+        <Link to="/music" onClick={closeMobileMenu}>Music</Link>
+        <Link to="/gallery" onClick={closeMobileMenu}>Gallery</Link>
+        <Link to="/contact" onClick={closeMobileMenu}>Contact</Link>
       </div>
     </header>
   );

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../css/contact.css';
 import '../../index.css'; 
 
@@ -26,8 +27,7 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    // For now, we'll just simulate a successful submission
+ 
     
     setFormStatus({
       submitted: true,
@@ -35,7 +35,7 @@ function Contact() {
       message: 'Thank you for your message! We will get back to you soon.'
     });
     
-    // Reset form after submission
+    
     setFormData({
       name: '',
       email: '',
@@ -43,6 +43,29 @@ function Contact() {
       message: ''
     });
   };
+
+ 
+  const handleAttendEvent = () => {
+    window.location.href = '/events';
+  };
+
+  const handleVolunteer = () => {
+ 
+    const volunteerEmail = 'volunteer@shabachministries.org';
+    const subject = 'Volunteer Interest';
+    const body = 'Hello, I am interested in volunteering with The Shabach Ministries. Please provide me with more information about volunteer opportunities.';
+    window.location.href = `mailto:${volunteerEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
+  const handleJoinPraiseTeam = () => {
+    
+    const praiseTeamEmail = 'worship@shabachministries.org';
+    const subject = 'Praise Team Interest';
+    const body = 'Hello, I am interested in joining the Praise Team at The Shabach Ministries. Please let me know about auditions and requirements.';
+    window.location.href = `mailto:${praiseTeamEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
+ 
 
   return (
     <div className="contact-page">
@@ -53,15 +76,12 @@ function Contact() {
       
       <div className="contact-container">
         <div className="contact-info">
-          
-          
           <div className="contact-card">
             <div className="contact-icon">
               <i className="fas fa-phone"></i>
             </div>
             <h3>Phone</h3>
             <p>(929) 609-0225</p>
-            
           </div>
           
           <div className="contact-card">
@@ -72,8 +92,6 @@ function Contact() {
             <p>info@shabachministries.org</p>
             <p>support@shabachministries.org</p>
           </div>
-          
-         
         </div>
         
         <div className="contact-form-container">
@@ -139,9 +157,7 @@ function Contact() {
         </div>
       </div>
       
-      
-      
-      {/* Replaced FAQ with Community Section */}
+     
       <section className="community-section">
         <h2>Join Our Community</h2>
         <div className="community-content">
@@ -163,34 +179,27 @@ function Contact() {
           </p>
           
           <div className="community-buttons">
-            <a href="#" className="community-btn filled">
+            <button 
+              className="community-btn filled"
+              onClick={handleAttendEvent}
+            >
               <i className="fas fa-calendar-alt"></i> Attend our Event
-            </a>
-            <a href="#" className="community-btn">
+            </button>
+            <button 
+              className="community-btn"
+              onClick={handleVolunteer}
+            >
               <i className="fas fa-hands-helping"></i> Volunteer with Us
-            </a>
-            <a href="#" className="community-btn">
+            </button>
+            <button 
+              className="community-btn"
+              onClick={handleJoinPraiseTeam}
+            >
               <i className="fas fa-user-plus"></i> Join the Praise Team
-            </a>
+            </button>
           </div>
           
-          <div className="connect-icons">
-            <a href="#" className="connect-icon">
-              <i className="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" className="connect-icon">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="#" className="connect-icon">
-              <i className="fab fa-youtube"></i>
-            </a>
-            <a href="#" className="connect-icon">
-              <i className="fab fa-spotify"></i>
-            </a>
-            <a href="#" className="connect-icon">
-              <i className="fab fa-twitter"></i>
-            </a>
-          </div>
+
         </div>
       </section>
     </div>

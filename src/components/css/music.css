@@ -505,17 +505,7 @@
   overflow: hidden;
 }
 
-.join-music-ministry::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('/assets/patterns/subtle-cross-pattern.png');
-  opacity: 0.05;
-  z-index: 0;
-}
+
 
 .ministry-content {
   position: relative;

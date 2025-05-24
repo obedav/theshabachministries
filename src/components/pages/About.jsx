@@ -26,7 +26,7 @@ function About() {
         </p>
       </div>
       <div className="about-image">
-        <img src="src/assets/images/about.jpg" alt="Our church history" />
+        <img src="/assets/images/about.jpg" alt="Our church history" />
       </div>
     </div>
   </div>

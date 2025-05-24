@@ -17,8 +17,8 @@ function Music() {
       artist: "Sanmi Imanuel",
       description: "A powerful worship anthem celebrating God's glory and majesty. This song invites listeners into a deeper experience of praise.",
       duration: "5:08",
-      thumbnail: "src/assets/images/grateful-1.jpeg",
-      previewSrc: "src/assets/audio/grateful1.mp3",
+      thumbnail: "/assets/images/grateful-1.jpeg",
+      previewSrc: "/assets/audio/grateful1.mp3",
       youtubeUrl: "https://www.youtube.com/watch?v=HoupHL__C_w"
     },
     {
@@ -27,8 +27,8 @@ function Music() {
       artist: "Sanmi Imanuel",
       description: "A powerful song refer the Jesus the author and the finisher of our faith. Features dynamic vocals and powerful instrumentation.",
       duration: "4:01",
-      thumbnail: "src/assets/images/anchor.jpg",
-      previewSrc: "src/assets/audio/anchor.mp4",
+      thumbnail: "/assets/images/anchor.jpg",
+      previewSrc: "/assets/audio/anchor.mp4",
       youtubeUrl: "https://www.youtube.com/watch?v=mG26IahtN7Y"
     },
     {
@@ -37,8 +37,8 @@ function Music() {
       artist: "Sanmi Imanuel",
       description: "A powerful song refer the Jesus the author and the finisher of our faith. Features dynamic vocals and powerful instrumentation.",
       duration: "5:34",
-      thumbnail: "src/assets/images/babaoo.jpeg",
-      previewSrc: "src/assets/audio/babaoo1.mp3",
+      thumbnail: "/assets/images/babaoo.jpeg",
+      previewSrc: "/assets/audio/babaoo1.mp3",
       youtubeUrl: "https://www.youtube.com/watch?v=LakdfuoEk10"
     },
     {
@@ -47,8 +47,8 @@ function Music() {
       artist: "Sanmi Imanuel",
       description: "A testimony of God's faithfulness through life's challenges. This moving song reminds us that God is always by our side.",
       duration: "4:17",
-      thumbnail: "src/assets/images/grateful.jpg",
-      previewSrc: "src/assets/audio/You're_worthy.mp3",
+      thumbnail: "/assets/images/grateful.jpg",
+      previewSrc: "/assets/audio/You're_worthy.mp3",
       youtubeUrl: "https://www.youtube.com/watch?v=8WDK7PU8ryA"
     }
   ];
@@ -299,7 +299,7 @@ function Music() {
           </div>
           
           <div className="ministry-image">
-            <img src="src/assets/images/studio1.jpg" alt="Worship Team" />
+            <img src="/assets/images/studio1.jpg" alt="Worship Team" />
           </div>
         </div>
         

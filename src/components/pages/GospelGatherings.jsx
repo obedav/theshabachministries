@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../css/GospelGatherings.css';
 
 function GospelGatherings() {
   // Vision categories for future ministry events
@@ -132,7 +133,7 @@ function GospelGatherings() {
       <div className="contact-pastor-section">
         <div className="pastor-card">
           <div className="pastor-image">
-            <img src="src/assets/images/pastor_img.jpg" alt="Worship Pastor" />
+            <img src="/assets/images/pastor_img.jpg" alt="Worship Pastor" />
           </div>
           <div className="pastor-info">
             <h3>Have Questions About Our Future Events?</h3>

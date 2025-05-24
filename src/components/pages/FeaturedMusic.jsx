@@ -8,23 +8,23 @@ function FeaturedMusic() {
       id: 3,
       title: "Anchor",
       scripture: "Revelation 5:12",
-      coverImage: "src/assets/images/anchor.jpg",
-      audioUrl: "src/assets/audio/anchor.mp3"
+      coverImage: "/assets/images/anchor.jpg",
+      audioUrl: "/assets/audio/anchor.mp3"
     },
 
     {
       id: 1,
       title: "I am Greatful Lord",
       scripture: "Ephesians 2:8-9",
-      coverImage: "src/assets/images/grateful-1.jpeg",
-      audioUrl: "src/assets/audio/grateful.mp3"
+      coverImage: "/assets/images/grateful-1.jpeg",
+      audioUrl: "/assets/audio/grateful.mp3"
     },
     {
       id: 2,
       title: "You're Worthy",
       scripture: "Psalm 100:4",
-      coverImage: "src/assets/images/grateful.jpg",
-      audioUrl: "src/assets/audio/you're-worthy.mp3"
+      coverImage: "/assets/images/grateful.jpg",
+      audioUrl: "/assets/audio/You're_worthy.mp3"
     }
   
   ];
