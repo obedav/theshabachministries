@@ -25,32 +25,40 @@ function Contact() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
- 
+    setFormStatus({ submitted: false, success: false, message: '' });
     
-    setFormStatus({
-      submitted: true,
-      success: true,
-      message: 'Thank you for your message! We will get back to you soon.'
-    });
-    
-    
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+    try {
+      const response = await fetch('/backend/contact.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      const result = await response.json();
+      
+      setFormStatus({
+        submitted: true,
+        success: result.success,
+        message: result.message
+      });
+      if (result.success) {
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      }
+    } catch (error) {
+      setFormStatus({
+        submitted: true,
+        success: false,
+        message: 'An error occurred. Please try again later.'
+      });
+    }
   };
 
- 
   const handleAttendEvent = () => {
     window.location.href = '/events';
   };
 
   const handleVolunteer = () => {
- 
     const volunteerEmail = 'volunteer@shabachministries.org';
     const subject = 'Volunteer Interest';
     const body = 'Hello, I am interested in volunteering with The Shabach Ministries. Please provide me with more information about volunteer opportunities.';
@@ -58,14 +66,11 @@ function Contact() {
   };
 
   const handleJoinPraiseTeam = () => {
-    
     const praiseTeamEmail = 'worship@shabachministries.org';
     const subject = 'Praise Team Interest';
     const body = 'Hello, I am interested in joining the Praise Team at The Shabach Ministries. Please let me know about auditions and requirements.';
     window.location.href = `mailto:${praiseTeamEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
-
- 
 
   return (
     <div className="contact-page">
@@ -157,7 +162,6 @@ function Contact() {
         </div>
       </div>
       
-     
       <section className="community-section">
         <h2>Join Our Community</h2>
         <div className="community-content">
@@ -198,8 +202,6 @@ function Contact() {
               <i className="fas fa-user-plus"></i> Join the Praise Team
             </button>
           </div>
-          
-
         </div>
       </section>
     </div>

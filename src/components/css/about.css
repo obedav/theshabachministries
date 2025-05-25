@@ -1,46 +1,76 @@
-/* About Page Styling */
+/* About Page Styling - Enhanced Responsive with Glossy Effects */
 .about-page {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
 }
 
-/* About Section */
+/* Page Header with Glossy Effects */
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-top: 5rem;
+}
+
+.page-header h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, rgba(95, 3, 3, 1), rgba(95, 3, 3, 0.8), rgba(95, 3, 3, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: var(--font-secondary);
+  filter: drop-shadow(0 2px 4px rgba(95, 3, 3, 0.3));
+}
+
+.page-header p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  background: linear-gradient(135deg, rgba(14, 5, 0, 0.8), rgba(14, 5, 0, 0.6));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* About Section with Enhanced Responsiveness */
 .about-section {
-  padding: 3rem 0;
+  padding: clamp(2rem, 5vw, 3rem) 0;
 }
 
 .about-content {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 2rem;
+  gap: clamp(1.5rem, 4vw, 2rem);
   max-width: 1200px;
   margin: 0 auto;
-  flex-wrap: nowrap;
-  overflow: hidden;
+  flex-wrap: wrap;
 }
 
 .about-column {
   display: flex;
   align-items: stretch;
-  gap: 2rem;
+  gap: clamp(1.5rem, 4vw, 2rem);
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .about-text {
   flex: 1;
-  max-width: 50%;
+  min-width: 300px;
 }
 
 .about-text h2 {
   font-family: var(--font-secondary);
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
   font-weight: 700;
-  color: rgba(95, 3, 3, 0.9);
+  background: linear-gradient(135deg, rgba(95, 3, 3, 1), rgba(95, 3, 3, 0.8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 1.5rem;
   position: relative;
   padding-bottom: 0.5rem;
+  filter: drop-shadow(0 2px 4px rgba(95, 3, 3, 0.2));
 }
 
 .about-text h2::after {
@@ -49,68 +79,96 @@
   left: 0;
   bottom: 0;
   width: 60px;
-  height: 2px;
-  background-color: rgba(95, 3, 3, 0.4);
+  height: 3px;
+  background: linear-gradient(to right, rgba(95, 3, 3, 0.6), rgba(95, 3, 3, 0.3));
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(95, 3, 3, 0.2);
 }
 
 .about-text p {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
   line-height: 1.7;
-  color: rgba(14, 5, 0, 0.75);
+  background: linear-gradient(135deg, rgba(14, 5, 0, 0.8), rgba(14, 5, 0, 0.6));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 1.5rem;
 }
 
-
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 
+    0 12px 30px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  background: linear-gradient(145deg, #ffffff, #f8f8f8);
+}
 
 .about-image img {
   width: 100%;
-  height: 500px;
-  padding-top: 90px;
+  height: clamp(300px, 40vw, 500px);
+  padding-top: clamp(20px, 8vw, 90px);
   object-fit: cover;
   display: block;
   transition: transform 0.5s ease;
   border-radius: 8px 8px 0 0;
-  
 }
 
 .about-image:hover img {
   transform: scale(1.05);
 }
 
-/* Mission & Vision Section */
+/* Mission & Vision Section with Enhanced Effects */
 .mission-vision-section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  padding: 3rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(1.5rem, 4vw, 2rem);
+  padding: clamp(2rem, 5vw, 3rem) 0;
 }
 
 .mission-box, .vision-box {
-  padding: 2.5rem;
-  border-radius: 8px;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: 15px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(14, 5, 0, 0.08);
+  box-shadow: 
+    0 15px 35px rgba(14, 5, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.mission-box:hover, .vision-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 20px 45px rgba(14, 5, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .mission-box {
-  background: linear-gradient(135deg, rgba(95, 3, 3, 0.03), rgba(95, 3, 3, 0.08));
-  border-left: 4px solid rgba(95, 3, 3, 0.5);
+  background: linear-gradient(145deg, rgba(95, 3, 3, 0.05), rgba(95, 3, 3, 0.1), rgba(95, 3, 3, 0.03));
+  border-left: 4px solid rgba(95, 3, 3, 0.6);
 }
 
 .vision-box {
-  background: linear-gradient(135deg, rgba(14, 5, 0, 0.03), rgba(14, 5, 0, 0.08));
-  border-right: 4px solid rgba(95, 3, 3, 0.5);
+  background: linear-gradient(145deg, rgba(14, 5, 0, 0.05), rgba(14, 5, 0, 0.1), rgba(14, 5, 0, 0.03));
+  border-right: 4px solid rgba(95, 3, 3, 0.6);
 }
 
 .mission-box h2, .vision-box h2 {
   font-family: var(--font-secondary);
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 700;
-  color: rgba(95, 3, 3, 0.9);
+  background: linear-gradient(135deg, rgba(95, 3, 3, 1), rgba(95, 3, 3, 0.8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 1.5rem;
   position: relative;
   padding-bottom: 0.5rem;
+  filter: drop-shadow(0 1px 2px rgba(95, 3, 3, 0.2));
 }
 
 .mission-box h2::after, .vision-box h2::after {
@@ -119,39 +177,47 @@
   left: 0;
   bottom: 0;
   width: 50px;
-  height: 2px;
-  background-color: rgba(95, 3, 3, 0.4);
+  height: 3px;
+  background: linear-gradient(to right, rgba(95, 3, 3, 0.6), rgba(95, 3, 3, 0.3));
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(95, 3, 3, 0.2);
 }
 
 .mission-box p, .vision-box p {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
   line-height: 1.7;
-  color: rgba(14, 5, 0, 0.75);
+  background: linear-gradient(135deg, rgba(14, 5, 0, 0.8), rgba(14, 5, 0, 0.6));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Leadership Section */
-.leadership-section {
-  padding: 4rem 0;
-}
-
-/* Testimony Section */
+/* Testimony Section with Enhanced Glossy Effects */
 .testimony-section {
-  padding: 4rem 0;
-  background-color: rgba(95, 3, 3, 0.02);
+  padding: clamp(2rem, 6vw, 4rem) 0;
+  background: linear-gradient(145deg, rgba(95, 3, 3, 0.03), rgba(95, 3, 3, 0.08), rgba(95, 3, 3, 0.02));
   margin: 3rem -1.5rem;
-  padding: 4rem 1.5rem;
-  border-radius: 8px;
+  padding: clamp(2rem, 6vw, 4rem) 1.5rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 8px 25px rgba(95, 3, 3, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .testimony-section h2 {
   font-family: var(--font-secondary);
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
   font-weight: 700;
-  color: rgba(95, 3, 3, 0.9);
+  background: linear-gradient(135deg, rgba(95, 3, 3, 1), rgba(95, 3, 3, 0.8), rgba(95, 3, 3, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 2.5rem;
   text-align: center;
   position: relative;
   padding-bottom: 0.5rem;
+  filter: drop-shadow(0 3px 6px rgba(95, 3, 3, 0.3));
 }
 
 .testimony-section h2::after {
@@ -161,35 +227,48 @@
   transform: translateX(-50%);
   bottom: 0;
   width: 80px;
-  height: 2px;
-  background-color: rgba(95, 3, 3, 0.4);
+  height: 3px;
+  background: linear-gradient(to right, rgba(95, 3, 3, 0.6), rgba(95, 3, 3, 0.8), rgba(95, 3, 3, 0.6));
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(95, 3, 3, 0.2);
 }
 
 .testimony-section p {
-  font-size: 1.2rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.2rem);
   line-height: 1.8;
-  color: rgba(14, 5, 0, 0.8);
+  background: linear-gradient(135deg, rgba(14, 5, 0, 0.9), rgba(14, 5, 0, 0.7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 2rem;
   text-align: center;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 2rem;
 }
 
 .testimony-section p:last-child {
   margin-bottom: 0;
 }
 
+/* Leadership Section with Enhanced Effects */
+.leadership-section {
+  padding: clamp(2rem, 6vw, 4rem) 0;
+}
+
 .leadership-section h2 {
   font-family: var(--font-secondary);
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
   font-weight: 700;
-  color: rgba(95, 3, 3, 0.9);
+  background: linear-gradient(135deg, rgba(95, 3, 3, 1), rgba(95, 3, 3, 0.8), rgba(95, 3, 3, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 2.5rem;
   text-align: center;
   position: relative;
   padding-bottom: 0.5rem;
+  filter: drop-shadow(0 3px 6px rgba(95, 3, 3, 0.3));
 }
 
 .leadership-section h2::after {
@@ -199,31 +278,38 @@
   transform: translateX(-50%);
   bottom: 0;
   width: 80px;
-  height: 2px;
-  background-color: rgba(95, 3, 3, 0.4);
+  height: 3px;
+  background: linear-gradient(to right, rgba(95, 3, 3, 0.6), rgba(95, 3, 3, 0.8), rgba(95, 3, 3, 0.6));
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(95, 3, 3, 0.2);
 }
 
 .leadership-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: clamp(1.5rem, 3vw, 2rem);
 }
 
 .leader-card {
-  background-color: #fff;
-  border-radius: 8px;
+  background: linear-gradient(145deg, #ffffff, #f8f8f8);
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(14, 5, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 
+    0 12px 30px rgba(14, 5, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
 }
 
 .leader-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(14, 5, 0, 0.12);
+  box-shadow: 
+    0 20px 45px rgba(14, 5, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .leader-image {
-  height: 250px;
+  height: clamp(200px, 25vw, 250px);
   overflow: hidden;
 }
 
@@ -240,45 +326,64 @@
 
 .leader-card h3 {
   font-family: var(--font-secondary);
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
   font-weight: 600;
-  color: rgba(95, 3, 3, 0.9);
+  background: linear-gradient(135deg, rgba(95, 3, 3, 1), rgba(95, 3, 3, 0.8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin: 1.5rem 0 0.5rem;
   padding: 0 1.5rem;
+  filter: drop-shadow(0 1px 2px rgba(95, 3, 3, 0.2));
 }
 
 .leader-title {
-  font-size: 1rem;
-  color: rgba(95, 3, 3, 0.7);
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  background: linear-gradient(135deg, rgba(95, 3, 3, 0.8), rgba(95, 3, 3, 0.6));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-weight: 500;
   margin-bottom: 1rem;
   padding: 0 1.5rem;
 }
 
 .leader-bio {
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
   line-height: 1.6;
-  color: rgba(14, 5, 0, 0.75);
+  background: linear-gradient(135deg, rgba(14, 5, 0, 0.8), rgba(14, 5, 0, 0.6));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   padding: 0 1.5rem 1.5rem;
 }
 
-/* Values Section */
+/* Values Section with Enhanced Glossy Effects */
 .values-section {
-  padding: 4rem 0;
-  background-color: rgba(95, 3, 3, 0.02);
+  padding: clamp(2rem, 6vw, 4rem) 0;
+  background: linear-gradient(145deg, rgba(95, 3, 3, 0.03), rgba(95, 3, 3, 0.08), rgba(95, 3, 3, 0.02));
   margin: 3rem -1.5rem 0;
-  padding: 4rem 1.5rem;
+  padding: clamp(2rem, 6vw, 4rem) 1.5rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 8px 25px rgba(95, 3, 3, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .values-section h2 {
   font-family: var(--font-secondary);
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
   font-weight: 700;
-  color: rgba(95, 3, 3, 0.9);
+  background: linear-gradient(135deg, rgba(95, 3, 3, 1), rgba(95, 3, 3, 0.8), rgba(95, 3, 3, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 2.5rem;
   text-align: center;
   position: relative;
   padding-bottom: 0.5rem;
+  filter: drop-shadow(0 3px 6px rgba(95, 3, 3, 0.3));
 }
 
 .values-section h2::after {
@@ -288,36 +393,47 @@
   transform: translateX(-50%);
   bottom: 0;
   width: 80px;
-  height: 2px;
-  background-color: rgba(95, 3, 3, 0.4);
+  height: 3px;
+  background: linear-gradient(to right, rgba(95, 3, 3, 0.6), rgba(95, 3, 3, 0.8), rgba(95, 3, 3, 0.6));
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(95, 3, 3, 0.2);
 }
 
 .values-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 2rem;
+  gap: clamp(1.5rem, 3vw, 2rem);
 }
 
 .value-item {
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 2rem 1.5rem;
+  background: linear-gradient(145deg, #ffffff, #f8f8f8);
+  border-radius: 15px;
+  padding: clamp(1.5rem, 3vw, 2rem) clamp(1rem, 2vw, 1.5rem);
   text-align: center;
-  box-shadow: 0 10px 25px rgba(14, 5, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 
+    0 12px 30px rgba(14, 5, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
 }
 
 .value-item:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 15px 35px rgba(14, 5, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 45px rgba(14, 5, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .value-icon {
-  font-size: 2.5rem;
-  color: rgba(95, 3, 3, 0.7);
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  background: linear-gradient(135deg, rgba(95, 3, 3, 0.8), rgba(95, 3, 3, 0.6));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 1.5rem;
   position: relative;
   display: inline-block;
+  filter: drop-shadow(0 2px 4px rgba(95, 3, 3, 0.3));
 }
 
 .value-icon::after {
@@ -328,74 +444,194 @@
   bottom: -10px;
   width: 40px;
   height: 2px;
-  background-color: rgba(95, 3, 3, 0.3);
+  background: linear-gradient(to right, rgba(95, 3, 3, 0.4), rgba(95, 3, 3, 0.6), rgba(95, 3, 3, 0.4));
+  border-radius: 1px;
+  box-shadow: 0 1px 2px rgba(95, 3, 3, 0.2);
 }
 
 .value-item h3 {
   font-family: var(--font-secondary);
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
   font-weight: 600;
-  color: rgba(95, 3, 3, 0.9);
+  background: linear-gradient(135deg, rgba(95, 3, 3, 1), rgba(95, 3, 3, 0.8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 1rem;
+  filter: drop-shadow(0 1px 2px rgba(95, 3, 3, 0.2));
 }
 
 .value-item p {
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
   line-height: 1.6;
-  color: rgba(14, 5, 0, 0.75);
+  background: linear-gradient(135deg, rgba(14, 5, 0, 0.8), rgba(14, 5, 0, 0.6));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Responsive Styles */
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .about-page {
+    padding: 1.5rem 1rem;
+  }
+  
+  .about-column {
+    flex-direction: column;
+  }
+  
+  .about-text {
+    max-width: 100%;
+  }
+  
+  .about-image {
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+  
+  .mission-vision-section {
+    gap: 1.5rem;
+  }
+  
+  .leadership-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding-top: 3rem;
+    margin-bottom: 2rem;
+  }
+  
+  .about-section {
+    padding: 2rem 0;
+  }
+  
+  .mission-vision-section {
+    grid-template-columns: 1fr;
+    padding: 2rem 0;
+  }
+  
+  .testimony-section,
+  .values-section {
+    margin: 2rem -1rem;
+    padding: 2rem 1rem;
+    border-radius: 10px;
+  }
+  
+  .values-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .leadership-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .about-page {
+    padding: 1rem 0.75rem;
+  }
+  
+  .page-header {
+    padding-top: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-content {
+    gap: 1rem;
+  }
+  
+  .about-column {
+    gap: 1rem;
+  }
+  
+  .about-image img {
+    padding-top: 20px;
+    height: 250px;
+  }
+  
+  .mission-box,
+  .vision-box {
+    padding: 1.5rem;
+  }
+  
+  .testimony-section,
+  .values-section {
+    margin: 1.5rem -0.75rem;
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .leadership-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .leader-image {
+    height: 200px;
+  }
+  
+  .value-item {
+    padding: 1.5rem 1rem;
+  }
+}
+
 @media (max-width: 480px) {
   .about-content {
     flex-direction: column;
   }
   
   .about-image {
-    float: none;
-    max-width: 100%;
     margin: 1.5rem 0;
   }
   
-  .testimony-section {
-    margin: 2rem -1.5rem;
-    padding: 3rem 1.5rem;
+  .about-image img {
+    height: 200px;
+    padding-top: 10px;
   }
   
-  .testimony-section p {
-    font-size: 1.1rem;
+  .mission-box,
+  .vision-box {
+    padding: 1.25rem;
+  }
+  
+  .leader-card h3 {
+    padding: 0 1rem;
+  }
+  
+  .leader-title {
+    padding: 0 1rem;
+  }
+  
+  .leader-bio {
+    padding: 0 1rem 1rem;
   }
 }
-  
-  .mission-vision-section {
-    grid-template-columns: 1fr;
-  }
-  
-  .leadership-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
-  
-  .about-text h2, 
-  .mission-box h2, 
-  .vision-box h2, 
-  .leadership-section h2,
-  .values-section h2,
-  .testimony-section h2 {
-    font-size: 2rem;
-  }
 
-
-@media (max-width: 576px) {
-  .about-text h2, 
-  .mission-box h2, 
-  .vision-box h2, 
-  .leadership-section h2,
-  .values-section h2,
-  .testimony-section h2 {
-    font-size: 1.8rem;
+/* Print Media Query */
+@media print {
+  .about-page {
+    background: white !important;
   }
   
-  .values-grid {
-    grid-template-columns: 1fr;
+  .mission-box,
+  .vision-box,
+  .testimony-section,
+  .values-section,
+  .value-item,
+  .leader-card {
+    box-shadow: none !important;
+    background: white !important;
+    border: 1px solid #ddd;
+  }
+  
+  .about-image img {
+    max-height: 300px;
   }
 }

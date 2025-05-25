@@ -1,0 +1,40 @@
+
+
+=== New Contact Form Submission ===
+Date: 2025-05-25 21:03:26
+Name: test
+Email: test@gmail.com
+Subject: Testing
+Message: testing
+==========================================
+
+=== New Contact Form Submission ===
+Date: 2025-05-25 21:05:22
+Name: test
+Email: test@gmail.com
+Subject: Testing
+Message: testinf
+==========================================
+
+=== Contact Form Submission ===
+Date: 2025-05-25 21:09:39
+Environment: DEVELOPMENT
+Host: localhost
+Name: test
+Email: test@gmail.com
+Subject: Testing
+Message: ddddddddddddddddddddd
+Action: LOGGED ONLY
+==========================================
+
+=== Contact Form Submission ===
+Date: 2025-05-25 21:12:27
+Environment: DEVELOPMENT
+Host: localhost
+Name: test
+Email: test@gmail.com
+Subject: Testing
+Message: dddddddddddddddddddd
+Action: LOGGED ONLY
+==========================================
+
