@@ -2,8 +2,10 @@
 
 **A beautifully crafted, professional church website featuring worship music streaming, multimedia content, and ministry information built with React and modern web technologies.**
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-theshabachministries.org-blue?style=for-the-badge)](https://theshabachministries.org/)
-[![GitHub](https://img.shields.io/badge/📂_GitHub-Source_Code-black?style=for-the-badge)](https://github.com/obedav/shabach-ministries)
+![image](https://github.com/user-attachments/assets/66113420-8df2-46db-a678-3592ff71f1e0)
+
+![image](https://github.com/user-attachments/assets/d02b2039-2a93-4716-a314-379290c88161)
+
 
 ## ✨ Features
 
