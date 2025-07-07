@@ -168,9 +168,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 **David Makinde-George**  
-- 🌐 Portfolio: [your-portfolio-link]
-- 📧 Email: info@davidmakinde.com
-- 💼 LinkedIn: [your-linkedin]
+- 🌐 Portfolio: https://david-mg-jllm.vercel.app/
+- 📧 Email: obedav@live.com
+- 💼 LinkedIn: 
 - 🐙 GitHub: [@obedav](https://github.com/obedav)
 
 ---
